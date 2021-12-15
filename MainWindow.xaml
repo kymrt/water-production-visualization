@@ -1,0 +1,26 @@
+﻿<Window x:Class="WaterProductionVisualization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:DVC1="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Show" HorizontalAlignment="Left" Margin="639,40,0,0" VerticalAlignment="Top" Click="Button_Click" Height="26" Width="65"/>
+        
+        <DVC1:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" Margin="10,86,29,27" Background="LightSteelBlue" VerticalAlignment="Stretch" CrosshairVisibility="Collapsed">
+            <DVC1:Chart.Series>
+                <DVC1:LineSeries Title="Amount Of Water Produced" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}">
+                </DVC1:LineSeries>
+            </DVC1:Chart.Series>
+        </DVC1:Chart>
+        <ComboBox x:Name="BarrageCombo" HorizontalAlignment="Left" Margin="66,44,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Barrage" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.169,-0.208"/>
+        <DatePicker x:Name="MinDate" HorizontalAlignment="Left" Margin="287,42,0,0" VerticalAlignment="Top" DisplayDateStart="2009-01-01" FirstDayOfWeek="Monday"/>
+        <DatePicker x:Name="MaxDate" HorizontalAlignment="Left" Margin="496,42,0,0" VerticalAlignment="Top"/>
+        <Label Content="Min Date:" HorizontalAlignment="Left" Margin="213,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Max Date:" HorizontalAlignment="Left" Margin="427,40,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
